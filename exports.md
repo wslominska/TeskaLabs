@@ -48,7 +48,7 @@ define:
 ```
 ** please complete it **
 
-Export files (or advanced exorts) may contain following sections:
+Export files (or advanced exports) may contain following sections:
 
 #### define
 The define section includes the following parameters:
