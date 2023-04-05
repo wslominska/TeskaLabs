@@ -12,7 +12,9 @@ The exports on the list are categorized according to colour:
 - Exports in yellow indicate exports that are in progress.
 - Exports in red indicate failed exports.
 - Exports in blue indicate scheduled exports.
-Each export can be downloaded or deleted. 
+- 
+Each export can be downloaded or deleted.
+
 You can search the list by typing the name of the export in the search bar. On that page, you can also make a new export by clicking ‘New’ in the upper right corner.
 
 ## Export Detail
