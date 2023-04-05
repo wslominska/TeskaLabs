@@ -7,7 +7,7 @@ You can find a detailed explanation of the Export functionality below.
 
 ## List of Exports
 The list of Exports allows you to see all the exports with the information about their data source, output, export size, and when it was exported. The exports on the list are sorted according to their export time: from the most recent to the oldest. You can open each export’s detailed view by clicking on its name.
-The exports on the list are categorized according to colour: 
+The exports on the list are categorized according to their colour: 
 - Exports in green indicate successfully completed exports. 
 - Exports in yellow indicate exports that are in progress.
 - Exports in red indicate failed exports.
@@ -18,7 +18,12 @@ Each export can be downloaded or deleted.
 You can search the list by typing the name of the export in the search bar. On that page, you can also make a new export by clicking ‘New’ in the upper right corner.
 
 ## Export Detail
-You can see complete information about a specific export on the Detail screen. Here you can also download and delete. The "Restart" runs the export again as is or with your custom changes. Deleting a scheduled export does not delete the exports that were generated from it.
+You can access detailed information about each export on the Detail screen. On that screen, you can also download and delete the export.
+
+By clicking ‘Restart’, you can run the export again – whether as it is, or with the custom changes you implemented. 
+
+If you delete a scheduled export, the exports that were generated from it before do not get removed. 
+
 
 ## Start Export
 The Start Export screen offers you pre-made Exports from the Library. You can run these directly or modify them and run them with your custom changes. The "Custom" button takes you to a blank form where you can create a self-made export.
