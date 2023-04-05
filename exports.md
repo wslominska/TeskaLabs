@@ -63,9 +63,37 @@ After filling in this table, you can go to YAML editor by clicking the “Advanc
 
 ## Advanced
 Exports defined in the Exports section of the Library and Advanced Exports are both in a YAML format. 
-Take a look at an example of an Advaced Export:
 
-*Advanced export example*
+Export files (or advanced exports) may contain following sections:
+
+#### define
+The define section includes the following parameters:
+
+- `name`: The name of the export.
+- `datasource`: The name of the DataSource declaration in the Library, specified as a specified as an absolute path to the Library.
+- `output`: The output format for the export. Available options are "raw", "csv", and "xlsx" for ES DataSources, and "raw" for Kafka DataSources.
+- `header`: When using "csv" or "xlsx" output, you must specify the header of the resulting table as an array of column names. These will appear in the same order as they are listed.
+- `schedule`- There are three options how to schedule an export
+    - **datetime** in a format YYYY-MM-DD HH:mm (e.g. 2023-01-01 00:00)
+    - **timestamp** as integer (e.g. 1674482460)
+    - **cron** - you can refer to http://en.wikipedia.org/wiki/Cron for more details, random “R” definition keywords are supported, and remain consistent only within their croniter() instance, Vixie cron-style “@” keyword expressions are supported.
+
+
+#### target
+The target section includes the following parameters:
+
+- `type`: An array of target types for the export. Possible options are "download", "email", and "jupyter". "download" is always selected if the target section is missing.
+- `email`: For email target type, you must specify at least the `to` field, which is an array of recipient email addresses. Other optional fields include:
+    - `cc`: an array of CC recipients
+    - `bcc`: an array of BCC recipients
+    - `from`: the sender's email address (string)
+    - `subject`: the subject of the email (string)
+    - `body`: a file name (with suffix) stored in the Template folder of the library, used as the email body template. You can also add special `parameters` to be used in the template. Otherwise, use any keyword from the define section of your export as a template parameter (for any export it is: `name`, `datasource`, `output`, for specific exports, you can also use parameters. `compression`, `header`, `schedule`, `timezone`, `tenant`).
+
+#### query
+The query field must be a string containing an ElasticSearch query object. Please refer to ES documentation: https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html
+
+Take a look at an example of an Advaced Export:
 
 ```
 define:
@@ -112,34 +140,8 @@ query:
 
 ```
 
+In this example, we have an advanced export named "Export_email_csv_march" that is designed to export data from Elasticsearch. The data will be exported in CSV format, with the column names for the output format defined in the header parameter. The header includes "@timestamp", "event.dataset", and "event.action" columns.
 
-Export files (or advanced exports) may contain following sections:
+This export is scheduled to run on March 5, 2023 at 9:52 AM. The target type for this Export is "Download", which means that the exported data will be downloaded as a file. However, the exported data will also be sent via email to "va@teskalabs.com", with a copy of the email sent to "va@teskalabs.com". The "From" email address is also set to "va@teskalabs.com".
 
-#### define
-The define section includes the following parameters:
-
-- `name`: The name of the export.
-- `datasource`: The name of the DataSource declaration in the Library, specified as a specified as an absolute path to the Library.
-- `output`: The output format for the export. Available options are "raw", "csv", and "xlsx" for ES DataSources, and "raw" for Kafka DataSources.
-- `header`: When using "csv" or "xlsx" output, you must specify the header of the resulting table as an array of column names. These will appear in the same order as they are listed.
-- `schedule`- There are three options how to schedule an export
-    - **datetime** in a format YYYY-MM-DD HH:mm (e.g. 2023-01-01 00:00)
-    - **timestamp** as integer (e.g. 1674482460)
-    - **cron** - you can refer to http://en.wikipedia.org/wiki/Cron for more details, random “R” definition keywords are supported, and remain consistent only within their croniter() instance, Vixie cron-style “@” keyword expressions are supported.
-
-
-#### target
-The target section includes the following parameters:
-
-- `type`: An array of target types for the export. Possible options are "download", "email", and "jupyter". "download" is always selected if the target section is missing.
-- `email`: For email target type, you must specify at least the `to` field, which is an array of recipient email addresses. Other optional fields include:
-    - `cc`: an array of CC recipients
-    - `bcc`: an array of BCC recipients
-    - `from`: the sender's email address (string)
-    - `subject`: the subject of the email (string)
-    - `body`: a file name (with suffix) stored in the Template folder of the library, used as the email body template. You can also add special `parameters` to be used in the template. Otherwise, use any keyword from the define section of your export as a template parameter (for any export it is: `name`, `datasource`, `output`, for specific exports, you can also use parameters. `compression`, `header`, `schedule`, `timezone`, `tenant`).
-
-#### query
-The query field must be a string containing an ElasticSearch query object. Please refer to ES documentation: https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html
-
-
+The chosen query for this export will match all events in the "app_logs" dataset that have an "event.action" value of "login" and occurred between March 1 and March 31, 2023 (inclusive). This means that the export will only contain events related to login attempts that occurred during the month of March 2023.
