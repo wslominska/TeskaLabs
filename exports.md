@@ -44,7 +44,7 @@ If you want to create your own, custom export, follow these steps:
 4.	This selection depends on the configuration of the Export function and can include “e-mail” or “jupyter” targets.
 - If you choose “e-mail”, you can choose a predefined e-mail template form the Library or create your own. 
 - If you choose ‘jupyter” the files will be exported directly to jupyter notebook integrated within LogMan.io.
--
+
 5.	Select separator
 
 6.	Add schedule
