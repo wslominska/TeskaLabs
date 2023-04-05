@@ -1,12 +1,19 @@
 # LogMan.io Export beta
 
-The export functionality in LogMan.io refers to the ability to export log data from the platform to other destinations.
-The new Export funtionality is now in *beta*.
-You can create, run, remove or donwload exports.
-The export functionality will be explained below. 
+LogMan.io offers a convenient export functionality that enables you to seamlessly transfer log data from the platform to other destinations.
+the new Export feature is currently in *beta* and available for use
+With this feature, you can effortlessly create, run, remove, or download exports as needed. 
+You can find a detailed explanation of the Export functionality below.
 
 ## List of Exports
-Green exports are successfully completed exports. Yellow exports are in progress. Failed exports are in red and scheduled exports are shown in blue. Click on the name of each export to open its detailed view. You can download or delete each export. The list of exports is sorted from the most recent expor to the most old. You can search the list by name using the search bar. You can make new export.
+The list of Exports allows you to see all the exports with the information about their data source, output, export size, and when it was exported. The exports on the list are sorted according to their export time: from the most recent to the oldest. You can open each export’s detailed view by clicking on its name.
+The exports on the list are categorized according to colour: 
+Exports in green indicate successfully completed exports. 
+Exports in yellow indicate exports that are in progress.
+Exports in red indicate failed exports.
+Exports in blue indicate scheduled exports.
+Each export can be downloaded or deleted. 
+You can search the list by typing the name of the export in the search bar. On that page, you can also make a new export by clicking ‘New’ in the upper right corner.
 
 ## Export Detail
 You can see complete information about a specific export on the Detail screen. Here you can also download and delete. The "Restart" runs the export again as is or with your custom changes. Deleting a scheduled export does not delete the exports that were generated from it.
