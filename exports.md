@@ -26,30 +26,29 @@ If you delete a scheduled export, the exports that were generated from it before
 
 
 ## Start Export
-The Start Export screen offers you pre-made Exports from the Library. You can run these directly or modify them and run them with your custom changes. The "Custom" button takes you to a blank form where you can create a self-made export.
+By clicking on the Start Export screen, you can access pre-made Exports from the Library. You can either run them as they are or modify them and run them with the custom modifications you made. 
+
+Do you want to create your own export?
+You can do that by clicking the “Custom” button. It will take you to a blank form that you can use for your self-made export.
 
 ## Custom Export
-First, select the Data Source.
-This selection will determine the other export options.
+If you want to create your own, custom export, follow these steps:
 
-Select the output.
-If you select CSV output, you must enter the column names.
-"Add new header" button adds more columns. You can change the order of the columns by dragging.
-The same order of columns will be in the resulting table.
-If you do not fill in the columns or their names do not match the search terms in the database, your table will be empty.
+1.	Select the Data Source. By making this choice, the other export options will be determined. 
 
-Target option depends on the configuration of the Export function and can incude "e-mail" and "jupyter" targets.
-Jupyter exports the files directly to jupyter notebook integrated within LogMan.io.
-Choose a predefined e-mail template from the Library or create there your own from there.
+2.	Select the Output. 
+- If you select CSV output, you need to enter the column names. You can add more columns by clicking “Add new header” in the section below. The order of the columns can be changed by dragging. The order you will arrange the columns in will stay the same in the resulting table. Remember that if you leave the columns blank or the columns’ names will not match the search terms in the database, the resulting table will be empty. 
 
-"Add schedule" button allows you to plan your export.
-Fill in date and time for one-off exports. You must stritly follow YYYY-MM-DD HH:mm format. Your date might look like this: *2023-01-01 12:00*.
-The second variant handes periodicaly scheduled exports. Use *cron* syntax for this option. 
-You can refer to http://en.wikipedia.org/wiki/Cron for more details, random “R” definition keywords are supported, Vixie cron-style “@” keyword expressions are supported.
+3.	Select the Target. 
 
-Query: https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html
+4.	This selection depends on the configuration of the Export function and can include “e-mail” or “jupyter” targets.
+- If you choose “e-mail”, you can choose a predefined e-mail template form the Library or create your own. 
+- If you choose ‘jupyter” the files will be exported directly to jupyter notebook integrated within LogMan.io.
+-
+5.	Select separator
 
-"Advanced" button lead you to YAML editor. Please see "Advanced" section for more infromation.
+6.	Add schedule
+
 
 ## Advanced
 Exports defined in the `Exports` section of the Library and Advanced Exports share common YAML format.
