@@ -67,7 +67,8 @@ Exports defined in the Exports section of the Library and Advanced Exports are b
 
 Export files (or advanced exports) may contain following sections:
 
-#### define
+#### Define
+
 The define section includes the following parameters:
 
 - `name`: The name of the export.
@@ -80,7 +81,8 @@ The define section includes the following parameters:
     - **cron** - Specify a cron expression to schedule the export. You can refer to the Wikipedia page on Cron for more details on how to create cron expressions: http://en.wikipedia.org/wiki/Cron. Random "R" definition keywords are supported, and they remain consistent only within their croniter() instance. Vixie cron-style "@" keyword expressions are also supported.
 
 
-#### target
+#### Target
+
 The target section includes the following parameters:
 
 - `type`: Choose from an array of target types for the export. Possible options are "download", "email", and "jupyter". Select "download" everytime the target section is missing.
@@ -91,7 +93,8 @@ The target section includes the following parameters:
     - `subject`: the subject of the email (as a string)
     - `body`: a file name (with suffix) stored in the Template folder of the library, used as the email body template. You can also add special `parameters` to be used in the template. Otherwise, use any keyword from the define section of your export as a template parameter. For any export, the available template parameters are: name, datasource, and output. For specific exports, you can also use parameters such as compression, header, schedule, timezone, and tenant.
 
-#### query
+#### Query
+
 The query field must be a string containing an ElasticSearch query object. Please refer to ES documentation: https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html
 
 Take a look at an example of an Advaced Export:
