@@ -49,6 +49,16 @@ If you want to create your own, custom export, follow these steps:
 
 6.	Add schedule
 
+Here, you have two options: one-off planning ad multiple planning. 
+- You can plan a single export by clicking “Add schedule” button and selecting a specific date and time for it to be exported.
+
+The format of the date and time must be strictly followed and it goes like this: YYYY-MM-DD HH:mm. That means the date and time should look like this: 2023-01-01 12:00. 
+- You can also select to schedule multiple exports on a periodical basis. For this option, use cron syntax format. 
+
+For more details about Cron, you can refer to http://en.wikipedia.org/wiki/Cron.
+
+Generally, the supported keywords are random “R” definition keywords and Vixie cron-style “@” keyword expressions.
+
 
 ## Advanced
 Exports defined in the `Exports` section of the Library and Advanced Exports share common YAML format.
