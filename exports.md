@@ -142,6 +142,6 @@ query:
 
 In this example, we have an advanced export named "Export_email_csv_march" that is designed to export data from Elasticsearch. The data will be exported in CSV format, with the column names for the output format defined in the header parameter. The header includes "@timestamp", "event.dataset", and "event.action" columns.
 
-This export is scheduled to run on March 5, 2023 at 9:52 AM. The target type for this Export is "Download", which means that the exported data will be downloaded as a file. However, the exported data will also be sent via email to "va@teskalabs.com", with a copy of the email sent to "va@teskalabs.com". The "From" email address is also set to "va@teskalabs.com".
+This export is scheduled to run on March 5, 2023 at 9:52 AM. The target type for this Export is "Download", which means that the exported data will be downloaded as a file. However, the exported data will also be sent via email to "va@teskalabs.com", with a copy of the email sent to "va@teskalabs.com". The export will appear to be sent from "va@teskalabs.com".
 
 The chosen query for this export will match all events in the "app_logs" dataset that have an "event.action" value of "login" and occurred between March 1 and March 31, 2023 (inclusive). This means that the export will only contain events related to login attempts that occurred during the month of March 2023.
