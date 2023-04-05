@@ -49,7 +49,7 @@ If you want to create your own, custom export, follow these steps:
 
 6.	Add schedule
 
-Here, you have two options: one-off planning ad multiple planning. 
+Here, you have two options: one-off planning and multiple planning. 
 - You can plan a single export by clicking “Add schedule” button and selecting a specific date and time for it to be exported.
 
 The format of the date and time must be strictly followed and it goes like this: YYYY-MM-DD HH:mm. That means the date and time should look like this: 2023-01-01 12:00. 
@@ -59,19 +59,59 @@ For more details about Cron, you can refer to http://en.wikipedia.org/wiki/Cron.
 
 Generally, the supported keywords are random “R” definition keywords and Vixie cron-style “@” keyword expressions.
 
+After filling in this table, you can go to YAML editor by clicking the “Advanced” button. The “Advanced” section will be explained below.
 
 ## Advanced
-Exports defined in the `Exports` section of the Library and Advanced Exports share common YAML format.
+Exports defined in the Exports section of the Library and Advanced Exports are both in a YAML format. 
+Take a look at an example of an Advaced Export:
 
 *Advanced export example*
 
 ```
 define:
-  name: Export e-mail
-  datasource: elasticsearch
+  name: Export_email_csv_march
+  datasource: /DataSources/elasticsearch_short.yaml
+  output: csv
+  header: [“@timestamp”, “event.dataset”, “event.action”]
+  schedule: 2023-03-05 09:52
+target:
+  type: [“download”]
+  email:
+  to: "va@teskalabs.com"
+  cc: "va@teskalabs.com"
+  from: "va@teskalabs.com"
+  subject: “March 2023 Logs Export”
+  body: “export_email_template.html”
+query:
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match": {
+            "event.dataset": "app_logs"
+          }
+        },
+        {
+          "match": {
+            "event.action": "login"
+          }
+        },
+        {
+          "range": {
+            "@timestamp": {
+              "gte": "2023-03-01T00:00:00",
+              "lte": "2023-03-31T23:59:59"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
 
 ```
-** please complete it **
+
 
 Export files (or advanced exports) may contain following sections:
 
