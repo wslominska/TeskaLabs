@@ -71,25 +71,25 @@ Export files (or advanced exports) may contain following sections:
 The define section includes the following parameters:
 
 - `name`: The name of the export.
-- `datasource`: The name of the DataSource declaration in the Library, specified as a specified as an absolute path to the Library.
-- `output`: The output format for the export. Available options are "raw", "csv", and "xlsx" for ES DataSources, and "raw" for Kafka DataSources.
-- `header`: When using "csv" or "xlsx" output, you must specify the header of the resulting table as an array of column names. These will appear in the same order as they are listed.
-- `schedule`- There are three options how to schedule an export
-    - **datetime** in a format YYYY-MM-DD HH:mm (e.g. 2023-01-01 00:00)
-    - **timestamp** as integer (e.g. 1674482460)
-    - **cron** - you can refer to http://en.wikipedia.org/wiki/Cron for more details, random “R” definition keywords are supported, and remain consistent only within their croniter() instance, Vixie cron-style “@” keyword expressions are supported.
+- `datasource`: The name of the DataSource declaration in the Library. It should be written as an absolute path that uniquely identifies its location.
+- `output`: The format in which you want the exported data to be saved. You can choose from "raw", "csv", and "xlsx" options for Elasticsearch data sources, and "raw" option for Kafka data sources.
+- `header`: When exporting data in "csv" or "xlsx" format, you must specify the header of the resulting table as an array of column names. These column names will appear in the same order as they are listed.
+- `schedule`- You can choose one of three options for scheduling your export:
+    - **datetime** Specify the date and time when you want the export to run in the format YYYY-MM-DD HH:mm (e.g. 2023-01-01 00:00).
+    - **timestamp** Specify the Unix timestamp (number of seconds since January 1, 1970) when you want the export to run (e.g. 1674482460).
+    - **cron** - Specify a cron expression to schedule the export. You can refer to the Wikipedia page on Cron for more details on how to create cron expressions: http://en.wikipedia.org/wiki/Cron. Random "R" definition keywords are supported, and they remain consistent only within their croniter() instance. Vixie cron-style "@" keyword expressions are also supported.
 
 
 #### target
 The target section includes the following parameters:
 
-- `type`: An array of target types for the export. Possible options are "download", "email", and "jupyter". "download" is always selected if the target section is missing.
-- `email`: For email target type, you must specify at least the `to` field, which is an array of recipient email addresses. Other optional fields include:
+- `type`: Choose from an array of target types for the export. Possible options are "download", "email", and "jupyter". Select "download" everytime the target section is missing.
+- `email`: For email target type, you must specify at least the `to` field, which is an array of recipient email addresses. You can also include other optional fields, such as:
     - `cc`: an array of CC recipients
     - `bcc`: an array of BCC recipients
-    - `from`: the sender's email address (string)
-    - `subject`: the subject of the email (string)
-    - `body`: a file name (with suffix) stored in the Template folder of the library, used as the email body template. You can also add special `parameters` to be used in the template. Otherwise, use any keyword from the define section of your export as a template parameter (for any export it is: `name`, `datasource`, `output`, for specific exports, you can also use parameters. `compression`, `header`, `schedule`, `timezone`, `tenant`).
+    - `from`: the sender's email address (as a string)
+    - `subject`: the subject of the email (as a string)
+    - `body`: a file name (with suffix) stored in the Template folder of the library, used as the email body template. You can also add special `parameters` to be used in the template. Otherwise, use any keyword from the define section of your export as a template parameter. For any export, the available template parameters are: name, datasource, and output. For specific exports, you can also use parameters such as compression, header, schedule, timezone, and tenant.
 
 #### query
 The query field must be a string containing an ElasticSearch query object. Please refer to ES documentation: https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html
