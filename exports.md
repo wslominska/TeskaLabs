@@ -37,13 +37,13 @@ If you want to create your own, custom export, follow these steps:
 1.	Select the Data Source. By making this choice, the other export options will be determined. 
 
 2.	Select the Output. 
-- If you select CSV output, you need to enter the column names. You can add more columns by clicking “Add new header” in the section below. The order of the columns can be changed by dragging. The order you will arrange the columns in will stay the same in the resulting table. Remember that if you leave the columns blank or the columns’ names will not match the search terms in the database, the resulting table will be empty. 
+  - If you select CSV output, you need to enter the column names. You can add more columns by clicking “Add new header” in the section below. The order of the columns can be changed by dragging. The order you will arrange the columns in will stay the same in the resulting table. Remember that if you leave the columns blank or the columns’ names will not match the search terms in the database, the resulting table will be empty. 
 
 3.	Select the Target. 
 
 4.	This selection depends on the configuration of the Export function and can include “e-mail” or “jupyter” targets.
-- If you choose “e-mail”, you can choose a predefined e-mail template form the Library or create your own. 
-- If you choose ‘jupyter” the files will be exported directly to jupyter notebook integrated within LogMan.io.
+  - If you choose “e-mail”, you can choose a predefined e-mail template form the Library or create your own. 
+  - If you choose ‘jupyter” the files will be exported directly to jupyter notebook integrated within LogMan.io.
 
 5.	Select separator
 
