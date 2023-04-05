@@ -8,10 +8,10 @@ You can find a detailed explanation of the Export functionality below.
 ## List of Exports
 The list of Exports allows you to see all the exports with the information about their data source, output, export size, and when it was exported. The exports on the list are sorted according to their export time: from the most recent to the oldest. You can open each export’s detailed view by clicking on its name.
 The exports on the list are categorized according to colour: 
-Exports in green indicate successfully completed exports. 
-Exports in yellow indicate exports that are in progress.
-Exports in red indicate failed exports.
-Exports in blue indicate scheduled exports.
+- Exports in green indicate successfully completed exports. 
+- Exports in yellow indicate exports that are in progress.
+- Exports in red indicate failed exports.
+- Exports in blue indicate scheduled exports.
 Each export can be downloaded or deleted. 
 You can search the list by typing the name of the export in the search bar. On that page, you can also make a new export by clicking ‘New’ in the upper right corner.
 
