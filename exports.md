@@ -97,6 +97,8 @@ The target section includes the following parameters:
 
 The query field must be a string containing an ElasticSearch query object. Please refer to ES documentation: https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html
 
+The Elasticsearch Query DSL is a set of tools that allow you to search and filter data in Elasticsearch, which can help you create highly targeted exports that only include the data you need.
+
 Take a look at an example of an Advaced Export:
 
 ```
