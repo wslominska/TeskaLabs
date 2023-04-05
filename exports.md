@@ -1,7 +1,9 @@
 # LogMan.io Export beta
 
-Create, run, remove or download exports.
+The export functionality in LogMan.io refers to the ability to export log data from the platform to other destinations.
 The new Export funtionality is now in *beta*.
+You can create, run, remove or donwload exports.
+The export functionality will be explained below. 
 
 ## List of Exports
 Green exports are successfully completed exports. Yellow exports are in progress. Failed exports are in red and scheduled exports are shown in blue. Click on the name of each export to open its detailed view. You can download or delete each export. The list of exports is sorted from the most recent expor to the most old. You can search the list by name using the search bar. You can make new export.
