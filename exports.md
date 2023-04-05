@@ -1,7 +1,7 @@
 # LogMan.io Export beta
 
 LogMan.io offers a convenient export functionality that enables you to seamlessly transfer log data from the platform to other destinations.
-the new Export feature is currently in *beta* and available for use
+the new Export feature is currently in *beta* and available for use.
 With this feature, you can effortlessly create, run, remove, or download exports as needed. 
 You can find a detailed explanation of the Export functionality below.
 
